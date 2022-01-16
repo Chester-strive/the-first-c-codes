@@ -1,0 +1,48 @@
+#include<stdio.h>
+int narcissus(int m); 
+int main()
+{
+	int m,n,i,flag;	
+	
+	while(scanf("%d%d",&m,&n)!=EOF)
+	{
+		flag=1;	
+		for(i=m;i<=n;i++)
+		{
+			if(narcissus(i)==1)
+			{
+				if(flag==1)
+				{
+					printf("%d",i);
+					flag=0;	
+				}
+				else
+				{
+					printf(" %d",i);	
+				}	
+			}	
+		}
+	    if(flag==1)
+	    {
+	    	printf("no");
+		}
+		printf("\n");
+	}
+	
+	return 0;
+ } 
+int narcissus(int m)
+{
+	int b,c,d;
+	b=m%10;
+	c=m/10%10;
+	d=m/100;
+	if(b*b*b+c*c*c+d*d*d==m)
+	{
+		return 1;	
+	}	
+	else
+	{
+		return 0;	
+	}
+} 
