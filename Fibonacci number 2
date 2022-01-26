@@ -1,0 +1,40 @@
+#include<stdio.h>//描述第n个斐波那契数  
+//int Fib(int n) 效率太低 
+//{
+//	if(n<=2)
+//	{
+//		return 1;
+//	}
+//	else
+//	{
+//		return Fib(n-1)+Fib(n-2);
+//	}
+//}
+int Fib(int n)
+{
+	int a=1;
+	int b=1;
+	int c=0,i;
+	if(n<=2)
+	{
+		return 1;
+	}
+	else
+	{
+		for(i=3;i<=n;i++)
+		{
+			c=a+b;
+			a=b;
+			b=c;
+		}
+		return c;
+	}
+} 
+int main()
+{
+	int n,num;
+	scanf("%d",&n);
+	num = Fib(n);
+	printf("%d",num);
+	return 0;
+}
