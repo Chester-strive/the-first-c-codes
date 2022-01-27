@@ -1,0 +1,36 @@
+#include<stdio.h>
+void bubble_sort(int arr[],int sz)
+{
+	int i,j;
+	for(i=0;i<sz-1;i++)//趟数 
+	{
+		int flag=1; //当顺序时，能使程序更快。 
+		for(j=0;j<sz-1-i;j++)//每一趟 元素比较的对数。 
+		{
+			if(arr[j]>arr[j+1])
+			{
+				int tmp = arr[j];
+				arr[j] = arr[j+1];
+				arr[j+1]= tmp;
+				flag=0;
+			}
+		}
+		if(flag == 1)
+		{
+			break;
+		}
+	}
+	
+	
+}
+int main()
+{
+	int arr[]={10,9,8,7,6,5,4,3,2,1};	//冒泡排序，从倒叙变成顺序。 
+	int sz = sizeof(arr)/sizeof(arr[0]);
+	bubble_sort(arr,sz);
+	int i;
+	for(i=0;i<sz;i++)
+	{
+		printf("arr[%d] = %d\n",i,arr[i]);
+	}
+	return 0;
