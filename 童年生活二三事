@@ -1,0 +1,31 @@
+#include<stdio.h>
+int main()
+{
+	int  n,i,a,b,sum;
+	while(scanf("%d",&n),n!=0)
+	{
+		a=1;
+		b=2;
+		if(n==1)
+		{
+			sum=1;
+		}
+		if(n==2)
+		{
+			sum=2;
+		}
+		if(n>=3)
+		{
+			for(i=3;i<=n;i++)//斐波那契数列
+			{
+				sum=a+b;
+				a=b;
+				b=sum;
+			}
+		}
+		printf("%d\n",sum);
+	}
+	
+	return 0;
+}
+ 
